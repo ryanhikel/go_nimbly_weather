@@ -1,4 +1,4 @@
-# Rando
+# Test React/Express on Heroku
 
 Followed this example- [Create React App with Express in
 Production](https://daveceddia.com/create-react-app-express-production/)
