@@ -1,9 +1,7 @@
-# Test React/Express on Heroku
+# Weather Application built with React/Express hosted on Heroku
 
-Followed this example- [Create React App with Express in
+Built on top of an example application found here - [Create React App with Express in
 Production](https://daveceddia.com/create-react-app-express-production/)
-
-Minimal React/Express project deployed on Heroku.
 
 Steps to deploy:
 
