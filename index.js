@@ -10,18 +10,21 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('/api/weather/:location', (req, res) => {
   let city = req.params.location;
   let locationSearch = `https://www.metaweather.com/api/location/search/?query=${city}`;
-  request(locationSearch, function (err, response, body) {
+  request(locationSearch, (err, response, body) => {
+    // Find the woeid of the city the user types in so it can be
+    // used to find the weather for that location
     if (err && JSON.parse(body)[0]) {
       console.log(err);
     } else {
       let woeid = JSON.parse(body)[0].woeid;
       let url = `https://www.metaweather.com/api/location/${woeid}/`
       console.log(url);
-      request(url, function (err, response, body) {
+      request(url, (err, response, body) => {
         if (err) {
           console.log(err);
         } else {
           res.json(JSON.parse(body));
+          // return the weather information in json format
         }
       });
     }
