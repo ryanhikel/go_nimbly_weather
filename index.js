@@ -1,11 +1,9 @@
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
 const request =  require('request');
 const app = express();
 
 // Serve static files from the React app
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Put all API endpoints under '/api'
